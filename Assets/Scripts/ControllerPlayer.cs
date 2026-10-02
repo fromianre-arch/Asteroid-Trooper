@@ -1,13 +1,14 @@
-using UnityEngine;
+
+// Using give you the ablity to use the Unity Core Engine
+using UnityEngine; 
 using UnityEngine.InputSystem;
 
 public class ControllerPlayer : Controller
 {
-    
- public Key moveforward;
- public Key movebackward;
- public Key moveleft;
- public Key moveright;
+    public Key moveforward;   
+    public Key movebackward;
+    public Key moveleft;
+    public Key moveright;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +21,7 @@ public class ControllerPlayer : Controller
     {
         if (Keyboard.current[movebackward].isPressed)
         {
-            pawn.Move(Vector3.forward * Time.deltaTime);
+            pawn.Move(Vector3.back * Time.deltaTime);
         }
         if (Keyboard.current[moveleft].isPressed)
         {
@@ -32,7 +33,7 @@ public class ControllerPlayer : Controller
         }
         if (Keyboard.current[moveforward].isPressed)
         {
-            pawn.Move(Vector3.back * Time.deltaTime);
+            pawn.Move(Vector3.forward * Time.deltaTime);
         }
     }
 }
