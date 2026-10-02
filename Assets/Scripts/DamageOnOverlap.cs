@@ -1,8 +1,8 @@
 using UnityEngine;
-
+// 
 public class DamageOnOverlap : MonoBehaviour
 {
-    public float damageAmount = -10f;
+    public float damageAmount;
 
     void Start()
     {
@@ -17,9 +17,12 @@ public class DamageOnOverlap : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D otherCollider)
     {
         Health otherhealth;
-        //otherheath = otherCollider.gameObject.GetComponent<Health>();
-    
-    
-      
+        
+        otherhealth = otherCollider.gameObject.GetComponent<Health>();
+
+        if (otherhealth != null)
+        {
+            otherhealth.TakeDamage(damageAmount);
+        }
     }
 }
